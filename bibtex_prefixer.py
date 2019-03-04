@@ -2,10 +2,25 @@
 
 import argparse
 import bibtexparser
+from bibtexparser.bparser import BibTexParser
 
-def modify_entry(entry):
+
+# Let's define a function to customize our entries.
+# It takes a record and return this record.
+def customizations(entry):
+    """Use some functions delivered by the library
+
+    :param record: a record
+    :returns: -- customized record
+    """
+    global prefix
+    if 'acmid' in entry:
+        entry['ID']=prefix + entry['acmid']
+    else:
+        entry['ID']=prefix + entry['ID']
     return entry
 
+        
 def perform_prefixing(args):
 
 
@@ -24,14 +39,17 @@ def perform_prefixing(args):
     contents = contents.replace("month = nov","month = {November}")
     contents = contents.replace("month = dec","month = {December}")
     
-    bibtex_database = bibtexparser.loads(contents)
-
-    for i in range(len(bibtex_database.entries)):
-        bibtex_database.entries[i] = modify_entry(bibtex_database.entries[i])
+    parser = BibTexParser()
+    parser.customization = customizations
+    bibtex_database = bibtexparser.loads(contents, parser=parser)
     
     bibtexparser.dump(bibtex_database, args.output)
 
+
+
+    
 if __name__=="__main__":
+    global prefix
     parser = argparse.ArgumentParser()
     parser.add_argument("-v", "--verbose", action="store_true",
                     help="increase output verbosity")
@@ -45,5 +63,5 @@ if __name__=="__main__":
                                help="output bibtex file",required=True)
 
     args = parser.parse_args()
-
+    prefix = args.prefix
     perform_prefixing(args)
