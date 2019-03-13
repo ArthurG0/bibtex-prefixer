@@ -31,7 +31,6 @@ int main(int argc, char** argv){
 		}
 
 	}
-
 	w << res;
 	w << "Total citations: " << count << endl;
 
