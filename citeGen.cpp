@@ -4,6 +4,7 @@
 
 using namespace std;
 
+//first parameter - name of the file to read into. second parameter - name of the file to run to.
 int main(int argc, char** argv){
 	ifstream ifs;
 	ofstream w;
@@ -12,7 +13,7 @@ int main(int argc, char** argv){
 	string res = "";
 
 	ifs.open(argv[1]);
-	w.open("citations.txt");
+	w.open(argv[2]);
 
 	if(ifs.fail()){
 		cerr << "file doesn't exist" << endl;
