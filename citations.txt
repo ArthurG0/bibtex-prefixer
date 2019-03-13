@@ -21,7 +21,7 @@
 ~\cite{acm-199716}
 ~\cite{acm-199719}
 ~\cite{acm-2003617}
-~\cite{acm-2012:2184451}
+~\cite{acm-2184451}
 ~\cite{acm-2016915}
 ~\cite{acm-2094152}
 ~\cite{acm-2157156}
@@ -119,10 +119,10 @@
 ~\cite{acm-971369}
 ~\cite{acm-971392}
 ~\cite{acm-971446}
-~\cite{acm-Decker:2015:2676723}
-~\cite{acm-Lugmayr:2012:2393132}
-~\cite{acm-Lugmayr:2013:2523429}
-~\cite{acm-Lugmayr:2014:2676467}
-~\cite{acm-Vardi:2016:3028256}
-~\cite{acm-Vardi:2017:3055102}
+~\cite{acm-2676723}
+~\cite{acm-2393132}
+~\cite{acm-2523429}
+~\cite{acm-2676467}
+~\cite{acm-3028256}
+~\cite{acm-3055102}
 Total citations: 127
